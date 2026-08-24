@@ -5,7 +5,6 @@ import { SiteAnalytics } from '@/components/analytics';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hariomsbuild.vercel.app';
 const logoSrc = '/assets/logo.svg';
-const faviconSrc = '/assets/favicon.svg';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
   description: 'Digital systems built around real business problems. Websites, automation, systems and practical AI for businesses.',
   applicationName: 'Hariom Builds',
   alternates: { canonical: '/' },
-  icons: { icon: faviconSrc, shortcut: faviconSrc, apple: faviconSrc },
+  icons: { icon: logoSrc, shortcut: logoSrc, apple: logoSrc },
   openGraph: {
     type: 'website',
     siteName: 'Hariom Builds',
@@ -39,7 +38,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     '@type': 'ProfessionalService',
     name: 'Hariom Builds',
     url: siteUrl,
-    logo: `${siteUrl}/assets/logo.svg`,
+    logo: `${siteUrl}${logoSrc}`,
     description: 'Independent software-building studio focused on practical digital systems.',
     serviceType: ['Web Development', 'Automation', 'Software Systems', 'AI Development'],
   };
