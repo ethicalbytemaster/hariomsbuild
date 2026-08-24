@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { builds, labs } from '@/lib/projects';
 
-const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://hariombuilds.com';
+const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://hariomsbuild.vercel.app';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
