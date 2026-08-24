@@ -1,10 +1,18 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import './accessibility.css';
 import { SiteAnalytics } from '@/components/analytics';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hariombuilds.com';
 const logoSrc = 'https://raw.githubusercontent.com/pateljiop/hariom-builds/main/public/assets/images/02_Compact_Logo.png';
 const faviconSrc = 'https://raw.githubusercontent.com/pateljiop/hariom-builds/main/public/assets/images/05_Favicon_H.png';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  themeColor: '#080908',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
