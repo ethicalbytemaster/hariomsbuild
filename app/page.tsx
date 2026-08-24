@@ -7,7 +7,7 @@ import { EventLink } from '@/components/event-link';
 const logoSrc = '/assets/02_Compact_Logo.png';
 
 const previewMap: Record<string, string> = {
-  'masonry-demo': '/assets/previews/masonry.svg',
+  'masonry-demo': 'https://opengraph.githubassets.com/1/pateljiop/Demo',
   'laundry-demo': '/assets/previews/laundry.svg',
   'roofing-demo': '/assets/previews/roofing.svg',
   'mek-property-maintenance': '/assets/previews/mek-property-maintenance.svg',
