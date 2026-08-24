@@ -5,7 +5,7 @@ import { MobileNav } from '@/components/mobile-nav';
 import { EventLink } from '@/components/event-link';
 
 const previewFor = (github?: string) => github ? `https://opengraph.githubassets.com/1/${github.replace('https://github.com/', '')}` : null;
-const logoSrc = 'https://raw.githubusercontent.com/pateljiop/hariom-builds/main/public/assets/images/02_Compact_Logo.png';
+const logoSrc = '/assets/logo.svg';
 
 function Logo({ href = '/' }: { href?: string }) {
   return <Link className="brandLogo" href={href} aria-label="Hariom Builds home"><img src={logoSrc} alt="Hariom Builds" width={150} height={72} /></Link>;
