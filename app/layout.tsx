@@ -3,6 +3,8 @@ import './globals.css';
 import { SiteAnalytics } from '@/components/analytics';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hariombuilds.com';
+const logoSrc = 'https://raw.githubusercontent.com/pateljiop/hariom-builds/main/public/assets/images/02_Compact_Logo.png';
+const faviconSrc = 'https://raw.githubusercontent.com/pateljiop/hariom-builds/main/public/assets/images/05_Favicon_H.png';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -10,6 +12,7 @@ export const metadata: Metadata = {
   description: 'Digital systems built around real business problems. Websites, automation, systems and practical AI for businesses.',
   applicationName: 'Hariom Builds',
   alternates: { canonical: '/' },
+  icons: { icon: faviconSrc, shortcut: faviconSrc, apple: faviconSrc },
   openGraph: {
     type: 'website',
     siteName: 'Hariom Builds',
@@ -28,6 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     '@type': 'ProfessionalService',
     name: 'Hariom Builds',
     url: siteUrl,
+    logo: logoSrc,
     description: 'Independent software-building studio focused on practical digital systems.',
     serviceType: ['Web Development', 'Automation', 'Software Systems', 'AI Development'],
   };
