@@ -3,10 +3,10 @@
 import { useEffect, useRef } from 'react';
 
 const modules = [
-  { label: 'WEB', className: 'coreModule web' },
-  { label: 'AI', className: 'coreModule ai' },
-  { label: 'AUTO', className: 'coreModule auto' },
-  { label: 'SYS', className: 'coreModule sys' },
+  { label: 'WEB', className: 'orb orb1' },
+  { label: 'AI', className: 'orb orb2' },
+  { label: 'AUTO', className: 'orb orb3' },
+  { label: 'SYS', className: 'orb orb4' },
 ];
 
 export function BuildCore() {
@@ -27,10 +27,9 @@ export function BuildCore() {
 
   return (
     <div className="core" ref={ref} aria-label="Build Core showing Web, Automation, Systems and AI">
-      <div className="coreGrid" aria-hidden="true" />
       <div className="coreRing ring1" aria-hidden="true" />
       <div className="coreRing ring2" aria-hidden="true" />
-      <div className="coreNode"><small>BUILD</small><strong>CORE</strong></div>
+      <div className="coreNode" style={{ transform: 'perspective(700px) rotateX(var(--my, 0deg)) rotateY(var(--mx, 0deg))' }}><small>BUILD</small><strong>CORE</strong></div>
       {modules.map((module) => <span className={module.className} key={module.label}>{module.label}</span>)}
     </div>
   );
