@@ -3,7 +3,7 @@ import './globals.css';
 import './accessibility.css';
 import { SiteAnalytics } from '@/components/analytics';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hariombuilds.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hariomsbuild.vercel.app';
 const logoSrc = '/assets/logo.svg';
 const faviconSrc = '/assets/favicon.svg';
 
