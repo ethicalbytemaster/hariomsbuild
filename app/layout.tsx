@@ -4,7 +4,7 @@ import './accessibility.css';
 import { SiteAnalytics } from '@/components/analytics';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hariomsbuild.vercel.app';
-const logoSrc = '/assets/logo.svg';
+const logoSrc = '/assets/02_Compact_Logo.png';
 
 export const viewport: Viewport = {
   width: 'device-width',
