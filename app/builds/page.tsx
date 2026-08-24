@@ -4,7 +4,7 @@ import { builds } from '@/lib/projects';
 export const metadata = { title: 'Builds — Hariom Builds', description: 'Selected software builds from Hariom Builds.' };
 
 const previewMap: Record<string, string> = {
-  'masonry-demo': 'https://opengraph.githubassets.com/1/pateljiop/Demo',
+  'masonry-demo': '/assets/previews/masonry.svg',
   'roofing-demo': '/assets/previews/roofing.svg',
   'laundry-demo': '/assets/previews/laundry.svg',
   'mek-property-maintenance': '/assets/previews/mek-property-maintenance.svg',
