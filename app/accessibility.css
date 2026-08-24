@@ -1,0 +1,21 @@
+/* Accessibility and responsive QA overrides */
+html { overflow-x: hidden; }
+body { min-width: 0; }
+:focus-visible { outline: 2px solid #b7ff3c; outline-offset: 3px; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+.menuButton { min-width: 44px; min-height: 44px; }
+.mobileMenu a { min-height: 44px; display: flex; align-items: center; }
+.projectForm input, .projectForm select, .projectForm textarea { min-height: 46px; }
+.projectForm textarea { min-height: 150px; }
+img { max-width: 100%; }
+@media (max-width: 760px) {
+  .shell { overflow-wrap: anywhere; }
+  .heroGrid { gap: 18px; }
+  .actions { flex-wrap: wrap; }
+  .button { min-height: 48px; }
+  .preview, .casePreview { min-height: 220px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
