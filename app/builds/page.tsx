@@ -3,6 +3,13 @@ import { builds } from '@/lib/projects';
 
 export const metadata = { title: 'Builds — Hariom Builds', description: 'Selected software builds from Hariom Builds.' };
 
+const previewMap: Record<string, string> = {
+  'mek-property-maintenance': '/assets/previews/mek-property-maintenance.svg',
+  'roofing-demo': '/assets/previews/roofing.svg',
+  'laundry-demo': '/assets/previews/laundry.svg',
+  taskmaster: '/assets/previews/taskmaster.svg',
+};
+
 export default function BuildsPage() {
-  return <main className="page shell"><header className="pageHeader"><Link href="/" className="back">← Home</Link><div className="eyebrow">SELECTED BUILDS</div><h1>Software shaped around the problem.</h1><p>Selected client and internal builds. Claims and project details are kept deliberately factual.</p></header><div className="caseGrid">{builds.map((p, i) => <Link className="caseCard" href={`/builds/${p.slug}`} key={p.slug}><div className="casePreview"><span className="caseIndex">0{i + 1}</span><span className="caseStatus">{p.status}</span><div className="casePreviewTitle">{p.name}</div><div className="previewLines"/></div><div className="caseMeta"><span>{p.status}</span><span>CASE STUDY ↗</span></div><h2>{p.name}</h2><p>{p.summary}</p></Link>)}</div></main>;
+  return <main className="page shell"><header className="pageHeader"><Link href="/" className="back">← Home</Link><div className="eyebrow">SELECTED BUILDS</div><h1>Software shaped around the problem.</h1><p>Selected client and internal builds. Claims and project details are kept deliberately factual.</p></header><div className="caseGrid">{builds.map((p, i) => <Link className="caseCard" href={`/builds/${p.slug}`} key={p.slug}><div className="casePreview"><img className="casePreviewImage" src={previewMap[p.slug]} alt={`${p.name} project preview`} loading="lazy" /><span className="caseIndex">0{i + 1}</span><span className="caseStatus">{p.status}</span><div className="casePreviewTitle">{p.name}</div><div className="previewLines"/></div><div className="caseMeta"><span>{p.status}</span><span>CASE STUDY ↗</span></div><h2>{p.name}</h2><p>{p.summary}</p></Link>)}</div></main>;
 }
