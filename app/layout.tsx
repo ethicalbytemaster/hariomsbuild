@@ -4,8 +4,8 @@ import './accessibility.css';
 import { SiteAnalytics } from '@/components/analytics';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hariombuilds.com';
-const logoSrc = 'https://raw.githubusercontent.com/pateljiop/hariom-builds/main/public/assets/images/02_Compact_Logo.png';
-const faviconSrc = 'https://raw.githubusercontent.com/pateljiop/hariom-builds/main/public/assets/images/05_Favicon_H.png';
+const logoSrc = '/assets/logo.svg';
+const faviconSrc = '/assets/favicon.svg';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -39,7 +39,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     '@type': 'ProfessionalService',
     name: 'Hariom Builds',
     url: siteUrl,
-    logo: logoSrc,
+    logo: `${siteUrl}/assets/logo.svg`,
     description: 'Independent software-building studio focused on practical digital systems.',
     serviceType: ['Web Development', 'Automation', 'Software Systems', 'AI Development'],
   };
