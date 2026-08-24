@@ -4,7 +4,7 @@ import { BuildCore } from '@/components/build-core';
 import { MobileNav } from '@/components/mobile-nav';
 import { EventLink } from '@/components/event-link';
 
-const logoSrc = '/assets/logo.svg';
+const logoSrc = '/assets/02_Compact_Logo.png';
 
 function Logo({ href = '/' }: { href?: string }) {
   return <Link className="brandLogo" href={href} aria-label="Hariom Builds home"><img src={logoSrc} alt="Hariom Builds" width={150} height={72} /></Link>;
