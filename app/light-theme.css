@@ -1,0 +1,46 @@
+/* Premium light theme — intentionally art-directed, not a simple color inversion. */
+html[data-theme='light'] body{background:#f3f5ef;color:#11150f}
+html[data-theme='light'] .nav{background:rgba(243,245,239,.86);border-bottom:1px solid #d8ddd3;box-shadow:0 8px 30px rgba(22,30,18,.05)}
+html[data-theme='light'] .links{color:#596157}html[data-theme='light'] .links a:hover{color:#11150f!important}
+html[data-theme='light'] .navCta{border-color:#aeb8aa;background:#fff;color:#11150f!important;box-shadow:0 4px 18px rgba(18,28,15,.06)}
+html[data-theme='light'] .themeToggle{background:#11150f;color:#f3f5ef;border-color:#11150f;box-shadow:0 6px 18px rgba(18,24,15,.16)}
+html[data-theme='light'] .hero{background:radial-gradient(circle at 76% 28%,rgba(183,255,60,.14),transparent 28%),linear-gradient(180deg,#f8faf5 0%,#f1f4ed 72%,#e9eee5 100%);border-bottom:1px solid #dce2d8}
+html[data-theme='light'] .hero:after{background:radial-gradient(circle,rgba(183,255,60,.24),transparent 68%)}
+html[data-theme='light'] .heroNoise{opacity:.16;background-image:radial-gradient(#8eae67 1px,transparent 1px)}
+html[data-theme='light'] .heroEyebrow{color:#293126}html[data-theme='light'] .liveDot{background:#8bdc18;box-shadow:0 0 14px rgba(139,220,24,.55)}
+html[data-theme='light'] .heroKicker,html[data-theme='light'] .section .eyebrow{color:#697268}
+html[data-theme='light'] .hero h1{color:#10140f;text-shadow:0 2px 0 rgba(255,255,255,.8)}
+html[data-theme='light'] .hero h1 i,html[data-theme='light'] h2 i{color:#75bd13}
+html[data-theme='light'] .lead{color:#566056}html[data-theme='light'] .lead b{color:#1c2419}
+html[data-theme='light'] .primary{background:#aaff2f;color:#10150c;box-shadow:0 12px 35px rgba(107,160,24,.17)}
+html[data-theme='light'] .secondary{background:rgba(255,255,255,.72);border-color:#cbd3c6;color:#182016}
+html[data-theme='light'] .capabilities span{background:rgba(255,255,255,.58);border-color:#cbd4c5;color:#5c665a}
+html[data-theme='light'] .heroTrust{color:#737d72}html[data-theme='light'] .heroTrust b{color:#6cae12}
+html[data-theme='light'] .scrollCue{color:#778073}html[data-theme='light'] .scrollCue i{background:#a8b1a4}html[data-theme='light'] .scrollCue i:after{background:#7fca16}
+html[data-theme='light'] .core{filter:drop-shadow(0 28px 55px rgba(77,100,45,.12))}
+html[data-theme='light'] .coreGrid{border-color:#c5d0bd;background-image:linear-gradient(#9caf8d55 1px,transparent 1px),linear-gradient(90deg,#9caf8d55 1px,transparent 1px);opacity:.8}
+html[data-theme='light'] .scanLine{background:linear-gradient(90deg,transparent,#79c71a,transparent);box-shadow:0 0 16px rgba(121,199,26,.45)}
+html[data-theme='light'] .particle{background:#78c916;box-shadow:0 0 12px rgba(120,201,22,.5)}html[data-theme='light'] .nodePulse{border-color:#7fcf1e66}
+html[data-theme='light'] .signalBar{background:#fff;border-color:#d3dbd0;box-shadow:0 20px 55px rgba(38,52,30,.08)}
+html[data-theme='light'] .signalBar div{border-color:#e1e6df}html[data-theme='light'] .signalBar strong{color:#182016}html[data-theme='light'] .signalBar span{color:#727c71}
+html[data-theme='light'] .section{color:#11150f}html[data-theme='light'] .sectionIntro{color:#657064}html[data-theme='light'] .index{color:#667064}
+html[data-theme='light'] .card{background:#fff;border-color:#d8ded5;box-shadow:0 12px 40px rgba(34,48,28,.06)}html[data-theme='light'] .card:hover{border-color:#aebe9e;box-shadow:0 28px 70px rgba(34,48,28,.13)}
+html[data-theme='light'] .card p,html[data-theme='light'] .aboutCopy p{color:#5f695f}html[data-theme='light'] .card h3{color:#151b13}
+html[data-theme='light'] .cardMeta{color:#727b70}html[data-theme='light'] .status,html[data-theme='light'] .labStatus{color:#6db512}html[data-theme='light'] .textLink{color:#263025}html[data-theme='light'] .sourceLink{color:#687269}
+html[data-theme='light'] .caseMini{background:#f1f5ed;border-color:#d8e0d3}html[data-theme='light'] .caseMini span{color:#788276}html[data-theme='light'] .caseMini b{color:#4c584b}
+html[data-theme='light'] .previewShade{background:linear-gradient(180deg,rgba(0,0,0,0),rgba(8,13,7,.72))}html[data-theme='light'] .previewGrid{background-image:linear-gradient(rgba(183,255,60,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(183,255,60,.18) 1px,transparent 1px)}
+html[data-theme='light'] .stackStrip{background:#171c14;border-color:#2d352a}html[data-theme='light'] .stackTrack span{color:#aeb8a7}html[data-theme='light'] .stackTrack b{color:#aaff2f}
+html[data-theme='light'] .darkSection{background:#182017;border-color:#2a3427;color:#f0f4ea}html[data-theme='light'] .flowHeader p{color:#a8b2a3}
+html[data-theme='light'] .flowStep{background:#11170f;border-color:#34402f;box-shadow:0 14px 35px rgba(0,0,0,.12)}html[data-theme='light'] .flowStep>span,html[data-theme='light'] .flowStep p{color:#879184}html[data-theme='light'] .flowStep strong{color:#f4f7f0}html[data-theme='light'] .flowStep>b,html[data-theme='light'] .flowLine:after{color:#aaff2f}html[data-theme='light'] .flowStep.active{background:radial-gradient(circle at 90% 10%,#30431e,#11170f 55%);border-color:#657d4f}html[data-theme='light'] .flowLine{background:#4c5c43}
+html[data-theme='light'] .servicesSection{background:#e8ede4;border-color:#d3dbd0}html[data-theme='light'] .servicesIntro p{color:#687268}html[data-theme='light'] .serviceGrid{border-color:#cdd6ca}html[data-theme='light'] .serviceCard{border-color:#cdd6ca;background:#f8faf6}html[data-theme='light'] .serviceCard:hover{background:#fff;border-color:#9dad91;box-shadow:0 20px 45px rgba(36,54,30,.1)}html[data-theme='light'] .serviceTop small{color:#788275}html[data-theme='light'] .serviceCard p{color:#606b60}html[data-theme='light'] .serviceArrow{color:#6eb916}
+html[data-theme='light'] .problemGrid>div,html[data-theme='light'] .processGrid>div{border-color:#d1d9ce}html[data-theme='light'] .problemGrid p,html[data-theme='light'] .processGrid p{color:#657064}html[data-theme='light'] .problemGrid b,html[data-theme='light'] .processGrid b{color:#6eb916}html[data-theme='light'] .processSection{background:linear-gradient(180deg,#f0f3ed,#e7ece4)}
+html[data-theme='light'] .labList,html[data-theme='light'] .labItem{border-color:#d5dcd2}html[data-theme='light'] .labItem strong{color:#1a2118}html[data-theme='light'] .labNum{color:#788276}
+html[data-theme='light'] .proofPanel{background:radial-gradient(circle at 0 0,#eef5e8,#fff 55%);border-color:#d1dbcc;box-shadow:0 24px 65px rgba(39,55,33,.08)}html[data-theme='light'] .proofPanel p,html[data-theme='light'] .performancePanel p{color:#5f6a60}
+html[data-theme='light'] .proofGrid,html[data-theme='light'] .proofGrid div,html[data-theme='light'] .qualityList,html[data-theme='light'] .qualityList div{border-color:#d4ddd0}html[data-theme='light'] .proofGrid strong,html[data-theme='light'] .proofGrid span,html[data-theme='light'] .qualityList span,html[data-theme='light'] .qualityList em{color:#778275}
+html[data-theme='light'] .performancePanel{background:radial-gradient(circle at 85% 0,#e7f0df,#fff 55%);border-color:#d1dbcc;box-shadow:0 24px 65px rgba(39,55,33,.08)}
+html[data-theme='light'] .faqGrid,html[data-theme='light'] .faqGrid details{border-color:#d2dad0}html[data-theme='light'] .faqGrid p{color:#626d62}html[data-theme='light'] .faqGrid summary:after{color:#6eb916}
+html[data-theme='light'] .aboutCopy .textLink{color:#263025}html[data-theme='light'] .cta{background:radial-gradient(circle at 86% 10%,#e4f1d4,#fff 55%);border-color:#ccd8c6;box-shadow:0 24px 70px rgba(40,56,32,.1)}html[data-theme='light'] .cta p{color:#5f6a60}html[data-theme='light'] .cta small{color:#707a70}html[data-theme='light'] .ctaOrb{border-color:rgba(110,185,22,.25);box-shadow:0 0 90px rgba(110,185,22,.1)}
+html[data-theme='light'] .footer{border-color:#d5ddd2;color:#697368}html[data-theme='light'] .footer p span{color:#899289}
+html[data-theme='light'] .heroFloat{background:rgba(18,25,15,.93);border-color:#657354;box-shadow:0 20px 50px rgba(35,50,27,.18)}html[data-theme='light'] .projectModal{background:rgba(247,249,244,.97);border-color:#b9c6b4;box-shadow:0 30px 120px rgba(30,42,26,.25)}html[data-theme='light'] .modalClose{background:#fff;color:#11150f;border-color:#c5cec0}html[data-theme='light'] .modalKind{color:#5e9f0c;border-color:#afc29e}html[data-theme='light'] .modalFrame{border-color:#d5ddd1}
+html[data-theme='light'] .customCursor{border-color:#69ad12;mix-blend-mode:multiply}html[data-theme='light'] .customCursor span{background:#69ad12}html[data-theme='light'] .scrollMeter{background:#d3dacf}html[data-theme='light'] .scrollMeter span{background:#7fc91a}
+@media(max-width:760px){html[data-theme='light'] .signalBar{box-shadow:0 12px 30px rgba(38,52,30,.06)}html[data-theme='light'] .hero{background:linear-gradient(180deg,#f8faf5,#eef2eb)}}
