@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { builds, labs } from '@/lib/projects';
 import { BuildCore } from '@/components/build-core';
+import { MotionFX } from '@/components/motion-fx';
 import { MobileNav } from '@/components/mobile-nav';
 import { EventLink } from '@/components/event-link';
 
@@ -12,6 +13,7 @@ function Logo({ href = '/' }: { href?: string }) {
 
 export default function Home() {
   return <main>
+    <MotionFX />
     <nav className="nav"><Logo href="#top" /><div className="links"><EventLink href="/builds" event="build_view">Builds</EventLink><Link href="#solutions">Solutions</Link><Link href="/lab">Lab</Link><Link href="/about">About</Link><EventLink className="navCta" href="/start-a-project" event="cta_click">Start a Project</EventLink></div><MobileNav /></nav>
     <section id="top" className="hero shell"><div className="eyebrow">INDEPENDENT SOFTWARE-BUILDING STUDIO</div><div className="heroGrid"><div><h1>Digital systems built around <i>real business problems.</i></h1><p className="lead">Websites, automation, internal tools and practical AI experiences designed to make small businesses easier to run and easier to grow.</p><div className="actions"><EventLink className="button primary" href="/start-a-project" event="cta_click">Start a Project <span>↗</span></EventLink><EventLink className="button secondary" href="/builds" event="build_view">Explore Builds</EventLink></div><div className="capabilities"><span>Web</span><span>Automation</span><span>Systems</span><span>AI</span></div></div><BuildCore /></div></section>
     <section id="builds" className="section shell"><div className="sectionHead"><div><div className="eyebrow">SELECTED BUILDS</div><h2>Useful software, not just pretty screens.</h2></div><EventLink className="index" href="/builds" event="build_view">VIEW ALL →</EventLink></div><div className="cards">{builds.map((p,i)=><EventLink className="card" href={`/builds/${p.slug}`} event="build_view" key={p.slug}><div className="preview"><iframe className="projectPreviewFrame" src={p.demo ?? ''} title={`${p.name} live preview`} loading="lazy" tabIndex={-1} aria-hidden="true" /><div className="previewShade"/><span className="previewNumber">0{i+1}</span><div className="previewTitle">{p.name}</div><div className="previewStatus">{p.status}</div></div><div className="cardMeta"><span className="status">{p.status}</span><span>BUILD / 0{i+1}</span></div><h3>{p.name}</h3><p>{p.summary}</p><span className="textLink">View case study →</span></EventLink>)}</div></section>
