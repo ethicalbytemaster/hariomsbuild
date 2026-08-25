@@ -77,3 +77,8 @@ export function ProjectOpenButton({ name, demo, kind }: Preview) {
   if (!demo) return null;
   return <button className="previewOpen" data-cursor-view onClick={(event) => { event.preventDefault(); event.stopPropagation(); window.dispatchEvent(new CustomEvent<Preview>('portfolio:open', { detail: { name, demo, kind } })); }}>OPEN LIVE ↗</button>;
 }
+
+export function ThemeToggle() {
+  const [light, setLight] = useState(false);
+  return <button className="themeToggle" onClick={() => { const next = !light; setLight(next); document.documentElement.dataset.theme = next ? 'light' : 'dark'; }} aria-label="Toggle theme">{light ? 'DARK' : 'LIGHT'} ◐</button>;
+}
