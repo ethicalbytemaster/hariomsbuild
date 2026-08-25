@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 type Preview = { name: string; demo: string; kind: string };
+type ProjectButtonProps = { name: string; demo?: string; kind: string };
 
 export function PortfolioExperience() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -90,7 +91,7 @@ export function PortfolioExperience() {
   </>;
 }
 
-export function ProjectOpenButton({ name, demo, kind }: Preview) {
+export function ProjectOpenButton({ name, demo, kind }: ProjectButtonProps) {
   if (!demo) return null;
   return <button className="previewOpen" data-cursor-view onClick={(event) => { event.preventDefault(); event.stopPropagation(); window.dispatchEvent(new CustomEvent<Preview>('portfolio:open', { detail: { name, demo, kind } })); }}>OPEN LIVE ↗</button>;
 }
