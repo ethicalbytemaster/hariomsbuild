@@ -3,6 +3,7 @@ import './globals.css';
 import './accessibility.css';
 import './light-theme.css';
 import './builds/builds.css';
+import './core-fix.css';
 import { SiteAnalytics } from '@/components/analytics';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hariomsbuild.vercel.app';
