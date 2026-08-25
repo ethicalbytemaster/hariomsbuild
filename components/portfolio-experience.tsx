@@ -62,6 +62,23 @@ export function PortfolioExperience() {
     return () => cleanups.forEach((cleanup) => cleanup());
   });
 
+  useEffect(() => {
+    const magnets = Array.from(document.querySelectorAll<HTMLElement>('.magnetic'));
+    const cleanups = magnets.map((el) => {
+      const move = (event: MouseEvent) => {
+        if (window.matchMedia('(pointer: coarse)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const rect = el.getBoundingClientRect();
+        const x = (event.clientX - (rect.left + rect.width / 2)) * 0.16;
+        const y = (event.clientY - (rect.top + rect.height / 2)) * 0.16;
+        el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      };
+      const leave = () => { el.style.transform = 'translate3d(0,0,0)'; };
+      el.addEventListener('mousemove', move); el.addEventListener('mouseleave', leave);
+      return () => { el.removeEventListener('mousemove', move); el.removeEventListener('mouseleave', leave); };
+    });
+    return () => cleanups.forEach((cleanup) => cleanup());
+  });
+
   return <>
     <div ref={cursorRef} className="customCursor" aria-hidden="true"><span /></div>
     <div className="scrollMeter" aria-hidden="true"><span /></div>
