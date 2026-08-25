@@ -98,5 +98,17 @@ export function ProjectOpenButton({ name, demo, kind }: ProjectButtonProps) {
 
 export function ThemeToggle() {
   const [light, setLight] = useState(false);
-  return <button className="themeToggle" onClick={() => { const next = !light; setLight(next); document.documentElement.dataset.theme = next ? 'light' : 'dark'; }} aria-label="Toggle theme">{light ? 'DARK' : 'LIGHT'} ◐</button>;
+  useEffect(() => {
+    const saved = window.localStorage.getItem('hariom-theme');
+    const nextLight = saved === 'light';
+    setLight(nextLight);
+    document.documentElement.dataset.theme = nextLight ? 'light' : 'dark';
+  }, []);
+  const toggle = () => {
+    const next = !light;
+    setLight(next);
+    document.documentElement.dataset.theme = next ? 'light' : 'dark';
+    window.localStorage.setItem('hariom-theme', next ? 'light' : 'dark');
+  };
+  return <button className="themeToggle" onClick={toggle} aria-label={`Switch to ${light ? 'dark' : 'light'} theme`}>{light ? 'DARK MODE' : 'LIGHT MODE'} ◐</button>;
 }
