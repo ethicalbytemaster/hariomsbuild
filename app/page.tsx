@@ -5,6 +5,7 @@ import { MotionFX } from '@/components/motion-fx';
 import { MobileNav } from '@/components/mobile-nav';
 import { EventLink } from '@/components/event-link';
 import { PortfolioExperience, ProjectOpenButton, ThemeToggle } from '@/components/portfolio-experience';
+import { PremiumUpgrades } from '@/components/premium-upgrades';
 
 const logoSrc = '/assets/02_Compact_Logo.png';
 
@@ -24,6 +25,7 @@ const stack = ['NEXT.JS', 'REACT', 'TYPESCRIPT', 'TAILWIND', 'VERCEL', 'APIs', '
 export default function Home() {
   return <main>
     <MotionFX />
+    <PremiumUpgrades />
     <PortfolioExperience />
     <nav className="nav"><Logo href="#top" /><div className="links"><EventLink href="/builds" event="build_view">Builds</EventLink><Link href="#solutions">Solutions</Link><Link href="#lab">Lab</Link><Link href="#about">About</Link><ThemeToggle /><EventLink className="navCta" href="/start-a-project" event="cta_click">Start a Project ↗</EventLink></div><MobileNav /></nav>
 
