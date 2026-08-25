@@ -2,9 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+type Preview = { name: string; demo: string; kind: string };
+
 export function PortfolioExperience() {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [modal, setModal] = useState<{ name: string; demo: string; kind: string } | null>(null);
+  const [modal, setModal] = useState<Preview | null>(null);
 
   useEffect(() => {
     const cursor = cursorRef.current;
@@ -12,7 +14,6 @@ export function PortfolioExperience() {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const coarse = window.matchMedia('(pointer: coarse)').matches;
     if (reduced || coarse) return;
-
     let frame = 0;
     const move = (event: MouseEvent) => {
       if (frame) return;
@@ -30,11 +31,15 @@ export function PortfolioExperience() {
     };
     window.addEventListener('mousemove', move, { passive: true });
     window.addEventListener('mouseover', over, { passive: true });
-    return () => {
-      window.removeEventListener('mousemove', move);
-      window.removeEventListener('mouseover', over);
-      if (frame) cancelAnimationFrame(frame);
-    };
+    return () => { window.removeEventListener('mousemove', move); window.removeEventListener('mouseover', over); if (frame) cancelAnimationFrame(frame); };
+  }, []);
+
+  useEffect(() => {
+    const open = (event: Event) => setModal((event as CustomEvent<Preview>).detail);
+    const closeOnEscape = (event: KeyboardEvent) => { if (event.key === 'Escape') setModal(null); };
+    window.addEventListener('portfolio:open', open);
+    window.addEventListener('keydown', closeOnEscape);
+    return () => { window.removeEventListener('portfolio:open', open); window.removeEventListener('keydown', closeOnEscape); };
   }, []);
 
   useEffect(() => {
@@ -50,12 +55,8 @@ export function PortfolioExperience() {
         card.style.setProperty('--glow-x', `${(x + 0.5) * 100}%`);
         card.style.setProperty('--glow-y', `${(y + 0.5) * 100}%`);
       };
-      const leave = () => {
-        card.style.setProperty('--tilt-x', '0deg');
-        card.style.setProperty('--tilt-y', '0deg');
-      };
-      card.addEventListener('mousemove', move);
-      card.addEventListener('mouseleave', leave);
+      const leave = () => { card.style.setProperty('--tilt-x', '0deg'); card.style.setProperty('--tilt-y', '0deg'); };
+      card.addEventListener('mousemove', move); card.addEventListener('mouseleave', leave);
       return () => { card.removeEventListener('mousemove', move); card.removeEventListener('mouseleave', leave); };
     });
     return () => cleanups.forEach((cleanup) => cleanup());
@@ -72,17 +73,7 @@ export function PortfolioExperience() {
   </>;
 }
 
-export function ProjectOpenButton({ name, demo, kind }: { name: string; demo?: string; kind: string }) {
+export function ProjectOpenButton({ name, demo, kind }: Preview) {
   if (!demo) return null;
-  return <button className="previewOpen" data-cursor-view onClick={() => window.dispatchEvent(new CustomEvent('portfolio:open', { detail: { name, demo, kind } }))}>OPEN LIVE ↗</button>;
-}
-
-export function PortfolioModalBridge() {
-  const [, setTick] = useState(0);
-  useEffect(() => {
-    const handler = (event: Event) => setTick((value) => value + 1);
-    window.addEventListener('portfolio:open', handler);
-    return () => window.removeEventListener('portfolio:open', handler);
-  }, []);
-  return null;
+  return <button className="previewOpen" data-cursor-view onClick={(event) => { event.preventDefault(); event.stopPropagation(); window.dispatchEvent(new CustomEvent<Preview>('portfolio:open', { detail: { name, demo, kind } })); }}>OPEN LIVE ↗</button>;
 }
